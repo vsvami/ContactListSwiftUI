@@ -17,7 +17,7 @@ struct ContactListView: View {
                     Text(person.fullName)
                 }
             }
-            .navigationTitle("Contacts")
+            .navigationTitle("Contact List")
             .listStyle(.plain)
         }
     }
