@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Person: Hashable {
-    
+struct Person: Hashable, Identifiable {
+  
+    let id: Int
     let name: String
     let surname: String
     let email: String
@@ -37,6 +38,7 @@ struct Person: Hashable {
         
         for index in 0..<iterationCount {
             let person = Person(
+                id: index, 
                 name: names[index],
                 surname: surnames[index],
                 email: emails[index],

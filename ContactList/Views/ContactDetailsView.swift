@@ -12,9 +12,16 @@ struct ContactDetailsView: View {
     
     var body: some View {
         List{
-            PersonImageView()
-            ContactRowView(image: "phone", value: person.phoneNumber)
-            ContactRowView(image: "tray", value: person.email)
+            HStack(alignment: .center) {
+                Spacer()
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .padding()
+                Spacer()
+            }
+            Label(person.phoneNumber, systemImage: "phone")
+            Label(person.email, systemImage: "tray")
         }
         .navigationTitle(person.fullName)
     }

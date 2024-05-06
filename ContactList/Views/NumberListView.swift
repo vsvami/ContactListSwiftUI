@@ -12,14 +12,12 @@ struct NumberListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(persons, id: \.self) { person in
-                    Section {
-                        ContactRowView(image: "phone", value: person.phoneNumber)
-                        ContactRowView(image: "tray", value: person.email)
-                    } header: {
-                        Text(person.fullName)
-                    }
+            List(persons) { person in
+                Section {
+                    Label(person.phoneNumber, systemImage: "phone")
+                    Label(person.email, systemImage: "tray")
+                } header: {
+                    Text(person.fullName)
                 }
             }
             .listStyle(.plain)

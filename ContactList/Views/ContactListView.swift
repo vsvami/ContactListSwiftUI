@@ -12,7 +12,7 @@ struct ContactListView: View {
     
     var body: some View {
         NavigationStack {
-            List(persons, id: \.self) { person in
+            List(persons) { person in
                 NavigationLink(destination: ContactDetailsView(person: person)) {
                     Text(person.fullName)
                 }
